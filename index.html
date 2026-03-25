@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CraftApply – Minecraft Server Bewerbung</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Floating particles -->
+  <div class="particles" id="particles"></div>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="navbar">
+    <div class="nav-brand">
+      <span class="nav-logo">⛏</span>
+      <span class="nav-title">CraftApply</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#hero">Start</a></li>
+      <li><a href="#about">Über uns</a></li>
+      <li><a href="#contact">Kontakt</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">☰</button>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-badge">🎮 Minecraft Server</div>
+      <h1 class="hero-title">
+        <span class="title-line">Werde Teil</span>
+        <span class="title-line highlight">unserer Welt</span>
+      </h1>
+      <p class="hero-subtitle">
+        Bewirb dich jetzt auf unserem Server und baue gemeinsam mit uns!
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">✉ Bewerben</a>
+        <a href="#about" class="btn btn-secondary">Mehr erfahren</a>
+      </div>
+    </div>
+    <div class="hero-scene">
+      <div class="mc-character">
+        <div class="mc-head">
+          <div class="mc-face"></div>
+          <div class="mc-eye mc-eye-left"></div>
+          <div class="mc-eye mc-eye-right"></div>
+          <div class="mc-nose"></div>
+          <div class="mc-mouth"></div>
+        </div>
+        <div class="mc-body"></div>
+        <div class="mc-arm mc-arm-left"></div>
+        <div class="mc-arm mc-arm-right"></div>
+        <div class="mc-leg mc-leg-left"></div>
+        <div class="mc-leg mc-leg-right"></div>
+      </div>
+      <div class="floating-blocks">
+        <div class="mc-block block-grass" style="--delay:0s; --x:10%; --y:20%">🌿</div>
+        <div class="mc-block block-diamond" style="--delay:0.5s; --x:80%; --y:10%">💎</div>
+        <div class="mc-block block-coal" style="--delay:1s; --x:70%; --y:60%">⬛</div>
+        <div class="mc-block block-gold" style="--delay:1.5s; --x:5%; --y:70%">🟡</div>
+        <div class="mc-block block-tnt" style="--delay:2s; --x:90%; --y:80%">🧱</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about" id="about">
+    <div class="container">
+      <h2 class="section-title">
+        <span class="bracket">[</span> Über uns <span class="bracket">]</span>
+      </h2>
+      <div class="about-grid">
+        <div class="about-card">
+          <div class="card-icon">🏰</div>
+          <h3>Survival</h3>
+          <p>Erkunde eine riesige Welt und überlebe gemeinsam mit anderen Spielern.</p>
+        </div>
+        <div class="about-card">
+          <div class="card-icon">🤝</div>
+          <h3>Community</h3>
+          <p>Eine freundliche und aktive Gemeinschaft, die immer hilfsbereit ist.</p>
+        </div>
+        <div class="about-card">
+          <div class="card-icon">⚔️</div>
+          <h3>Events</h3>
+          <p>Regelmäßige Server-Events und spannende Herausforderungen warten auf dich.</p>
+        </div>
+        <div class="about-card">
+          <div class="card-icon">🔧</div>
+          <h3>Custom Plugins</h3>
+          <p>Einzigartige Plugins sorgen für ein unvergessliches Spielerlebnis.</p>
+        </div>
+      </div>
+
+      <div class="server-info">
+        <h3 class="info-title">Server Info</h3>
+        <div class="info-grid">
+          <div class="info-item">
+            <span class="info-label">Version</span>
+            <span class="info-value">1.21.x</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Modus</span>
+            <span class="info-value">Survival / Creative</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Sprache</span>
+            <span class="info-value">Deutsch 🇩🇪</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Status</span>
+            <span class="info-value status-online">● Online</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2 class="section-title">
+        <span class="bracket">[</span> Kontakt <span class="bracket">]</span>
+      </h2>
+      <p class="section-subtitle">
+        Schreib uns eine Nachricht oder tritt unserem Discord bei – wir freuen uns auf dich!
+      </p>
+
+      <div class="contact-wrapper">
+
+        <!-- Contact Form -->
+        <div class="contact-form-box">
+          <h3 class="box-title">📨 Bewerbungsformular</h3>
+          <form id="contactForm" class="mc-form" novalidate>
+            <div class="form-group">
+              <label for="username">Minecraft Username *</label>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Steve"
+                autocomplete="username"
+                required
+                minlength="3"
+                maxlength="16"
+                pattern="[a-zA-Z0-9_]+"
+              />
+              <span class="field-hint">3–16 Zeichen, nur Buchstaben, Zahlen und _</span>
+            </div>
+            <div class="form-group">
+              <label for="email">E-Mail-Adresse *</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="steve@example.com"
+                autocomplete="email"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="discord">Discord Username</label>
+              <input
+                type="text"
+                id="discord"
+                name="discord"
+                placeholder="@username"
+                autocomplete="off"
+                maxlength="37"
+              />
+            </div>
+            <div class="form-group">
+              <label for="age">Alter *</label>
+              <input
+                type="number"
+                id="age"
+                name="age"
+                placeholder="16"
+                min="10"
+                max="99"
+                required
+              />
+            </div>
+            <div class="form-group full-width">
+              <label for="message">Warum möchtest du mitspielen? *</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Erzähl uns etwas über dich und warum du auf unseren Server möchtest..."
+                rows="5"
+                required
+                minlength="30"
+                maxlength="1000"
+              ></textarea>
+              <span class="char-counter"><span id="charCount">0</span> / 1000</span>
+            </div>
+            <div class="form-group full-width">
+              <button type="submit" class="btn btn-primary btn-block">
+                <span class="btn-text">Bewerbung senden ✉</span>
+                <span class="btn-loader" hidden>⏳ Wird gesendet…</span>
+              </button>
+            </div>
+          </form>
+
+          <!-- Success / Error messages -->
+          <div class="form-message" id="formMessage" hidden></div>
+        </div>
+
+        <!-- Direct contact options -->
+        <div class="contact-options">
+          <h3 class="box-title">🔗 Direkt kontaktieren</h3>
+
+          <a href="mailto:contact@craftapply.example" class="contact-card" id="emailCard">
+            <div class="contact-card-icon">✉️</div>
+            <div class="contact-card-body">
+              <strong>Per E-Mail</strong>
+              <span>contact@craftapply.example</span>
+            </div>
+            <div class="contact-card-arrow">›</div>
+          </a>
+
+          <a href="https://discord.gg/example" class="contact-card contact-card-discord" id="discordCard" target="_blank" rel="noopener noreferrer">
+            <div class="contact-card-icon">
+              <svg class="discord-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057.1 18.079.11 18.1.13 18.114a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+              </svg>
+            </div>
+            <div class="contact-card-body">
+              <strong>Discord beitreten</strong>
+              <span>discord.gg/example</span>
+            </div>
+            <div class="contact-card-arrow">›</div>
+          </a>
+
+          <div class="contact-note">
+            <span>💡</span>
+            <p>Wir antworten in der Regel innerhalb von 24–48 Stunden.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>⛏ CraftApply &copy; <span id="year"></span></span>
+      <span class="footer-sep">|</span>
+      <span>Nicht offiziell mit Mojang verbunden</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
