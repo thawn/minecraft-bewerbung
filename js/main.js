@@ -4,6 +4,49 @@
 
 'use strict';
 
+// ─── Apply config values ──────────────────────────────────────
+(function applyConfig() {
+  const cfg = window.CraftApplyConfig;
+  if (!cfg) return;
+
+  // Server name – page title, nav brand, footer
+  if (cfg.serverName) {
+    document.title = `${cfg.serverName} – Minecraft Server Bewerbung`;
+    const navTitle = document.querySelector('.nav-title');
+    if (navTitle) navTitle.textContent = cfg.serverName;
+    const footerBrand = document.querySelector('.footer-brand');
+    if (footerBrand) footerBrand.textContent = `⛏ ${cfg.serverName}`;
+  }
+
+  // E-mail – update href and visible text of the email card
+  if (cfg.email) {
+    const emailCard = document.getElementById('emailCard');
+    if (emailCard) {
+      emailCard.href = `mailto:${cfg.email}`;
+      const emailText = emailCard.querySelector('span');
+      if (emailText) emailText.textContent = cfg.email;
+    }
+  }
+
+  // Discord – update href and visible text of the discord card
+  if (cfg.discordUrl) {
+    const discordCard = document.getElementById('discordCard');
+    if (discordCard) {
+      discordCard.href = cfg.discordUrl;
+      const discordText = discordCard.querySelector('span');
+      if (discordText) {
+        // Show only the path without the protocol for a cleaner look
+        try {
+          const parsed = new URL(cfg.discordUrl);
+          discordText.textContent = parsed.host + parsed.pathname;
+        } catch {
+          discordText.textContent = cfg.discordUrl;
+        }
+      }
+    }
+  }
+})();
+
 // ─── Year in footer ──────────────────────────────────────────
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
@@ -135,7 +178,9 @@ if (form) {
     );
 
     const emailCard = document.getElementById('emailCard');
-    const rawEmail  = emailCard ? emailCard.getAttribute('href').replace('mailto:', '') : 'contact@craftapply.example';
+    const rawEmail  = emailCard
+      ? emailCard.getAttribute('href').replace('mailto:', '')
+      : (window.CraftApplyConfig?.email ?? 'contact@craftapply.example');
     const mailtoUrl = `mailto:${rawEmail}?subject=${subject}&body=${body}`;
 
     // Try to open mailto
